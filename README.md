@@ -2,14 +2,14 @@
 A poorly-maintained document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format.
 
 ## Steps
-From the command line, run `text_sim_model.py is_HTRC file_locs num_compare num_topics`.
+From the command line, run `text_sim_model.py`_`is_HTRC file_locs num_compare num_topics`_.
 ### _`is_HTRC`_
 A boolean with either “True” or “False,” depending on whether the analysis is being conducted on a corpus of HTRC volumes or a local directory of text files.
-### `file_locs`
+### _`file_locs`_
 A string (i.e., surrounded by quotes) pointing to the directory of either where the [HTRC-provided Extracted Features Download Helper](https://analytics.hathitrust.org/algorithms) saved a whole host of folders and files _or_ the directory of .txt files for analysis (must be in absolute format - i.e., the full address of the directory).
-### `num_compare`
+### _`num_compare`_
 An integer stating the number of documents to which you would like your _highlighted document_ compared.
-### `num_topics`
+### _`num_topics`_
 A list of the number of topics for each topic model.
 
 ## Required Files
