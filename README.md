@@ -1,5 +1,7 @@
 # Text Similarity and Modeling
-A document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format.
+A document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format. Both the similarity metric and topic modeling use a combination of Python's [NLTK](https://www.nltk.org/) and [GenSim](https://radimrehurek.com/gensim/) packages.
+## Similarity Metrics
+## Topic Modeling
 
 ## Steps
 From the command line, run `text_sim_model.py`_`is_HTRC has_custom_stop file_locs num_compare num_topics`_.
