@@ -22,7 +22,7 @@ You must save the text of the document you wish to “highlight” (e.g., Newton
 ### For HTRC corpi
 You must have run the above-mentioned [HTRC-provided Extracted Features Download Helper](https://analytics.hathitrust.org/algorithms) for your specific workset of volumes.
 ### For local .txt corpi
-You must have the documents to which you'd like to compare the highlighted text saved in the format `author name-title of text.txt`, where the author's name and multi-word document titles are seperated from each other by a hyphen.
+You must have the documents to which you'd like to compare the highlighted text saved in any format that will be recognizable to you.
 
 ## Example
 `python text_sim_model.py False True “C:/Users/USER/Documents/The_files_are_in_THIS_directory” 10 4 8 16` would execute a .txt analysis on all .txt files in the `The_files_are_in_THIS_directory`, highlighting the document at `The_files_are_in_THIS_directory/file_for_analysis.txt`, excluding the words contained in `custom_stop.txt`, and comparing it to 10 other documents, while generating 3 topic models with 4, 8, and 16 topics, respectively.
