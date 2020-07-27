@@ -3,7 +3,7 @@ A document similarity and topic modeling script. Allows one to use HathiTrust Re
 ## Similarity Metrics
 This script uses GenSim's built-in [_Term Frequency Inverse Document-Frequency_](https://radimrehurek.com/gensim/models/tfidfmodel.html) model in order to build out a list of the most similar documents to the highlighted document.
 ## Topic Modeling
-For topic modeling, this utilizes GenSim's [Latent Dirichilet Allocation](https://radimrehurek.com/gensim/models/ldamodel.html) model trained on te specified corpus.
+For topic modeling, this utilizes GenSim's [_Latent Dirichilet Allocation_](https://radimrehurek.com/gensim/models/ldamodel.html) model trained on te specified corpus.
 
 ## Steps
 From the command line, run `text_sim_model.py`_`is_HTRC has_custom_stop file_locs num_compare num_topics`_.
