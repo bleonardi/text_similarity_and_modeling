@@ -4,9 +4,9 @@ A document similarity and topic modeling script. Allows one to use HathiTrust Re
 ## Steps
 From the command line, run `text_sim_model.py`_`is_HTRC has_custom_stop file_locs num_compare num_topics`_.
 ### _`is_HTRC`_
-A boolean (either “True” or “False”) stating whether the analysis is being conducted on a corpus of HTRC volumes or a local directory of text files.
+A boolean (with value either `True`or `False`) stating whether the analysis is being conducted on a corpus of HTRC volumes or a local directory of text files.
 ### _`has_custom_stop`_
-A boolean (either “True” or “False”) stating whether the user is passing a custom stopwords file (saved as `custom_stop.txt`) listing (seperated by spaces) words to be excluded from the model.
+A boolean (either `True` or `False`) stating whether the user is passing a custom stopwords file (saved as `custom_stop.txt`) listing (seperated by spaces) words to be excluded from the model.
 ### _`file_locs`_
 A string (i.e., surrounded by quotes) pointing to the directory of either where the [HTRC-provided Extracted Features Download Helper](https://analytics.hathitrust.org/algorithms) saved a whole host of folders and files _or_ the directory of .txt files for analysis (must be in absolute format - i.e., the full address of the directory).
 ### _`num_compare`_
