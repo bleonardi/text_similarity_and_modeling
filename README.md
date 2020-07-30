@@ -1,10 +1,10 @@
 # Text Similarity and Modeling
-A document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format. Both the similarity metric and topic modeling use a combination of Python's [NLTK](https://www.nltk.org/) and [GenSim](https://radimrehurek.com/gensim/) packages, and the visualization software used is [pyLDAvis](https://github.com/bmabey/pyLDAvis).
+A document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format. Both the similarity metric and topic modeling use a combination of Python's [NLTK](https://www.nltk.org/) and [GenSim](https://radimrehurek.com/gensim/) packages, and the visualization software used is [pyLDAvis](https://github.com/bmabey/pyLDAvis). A completed final report (what is created upon the succesful completion of the script) is visible [here](https://htmlpreview.github.io/?https://github.com/bleonardi/text_similarity_and_modeling/blob/master/report.html).
 ## Algorithms
 This script uses GenSim's built-in [_Term Frequency Inverse Document-Frequency_](https://radimrehurek.com/gensim/models/tfidfmodel.html) model in order to build out a list of the most similar documents to the highlighted document, and uses [_Latent Dirichilet Allocation_](https://radimrehurek.com/gensim/models/ldamodel.html) to create topic models trained on the specified corpus.
 
 ## Steps
-From the command line, run `text_sim_model.py`_`is_HTRC has_custom_stop file_locs num_compare num_topics`_.
+Before beginning, download and extract the `setup_files.zip` in the directory of your choosing, and ensure that you run `python setup.py`. Note: this requires pip to be installed on your machine. Then, from the command line, run `text_sim_model.py`_`is_HTRC has_custom_stop file_locs num_compare num_topics`_.
 ### _`is_HTRC`_
 A boolean (with value either `True`or `False`) stating whether the analysis is being conducted on a corpus of HTRC volumes or a local directory of text files.
 ### _`has_custom_stop`_
