@@ -1,3 +1,4 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bleonardi/text_similarity_and_modeling/master)
 # Text Similarity and Modeling
 A document similarity and topic modeling script. Allows one to use HathiTrust Research Center (HTRC) worksets, or simply collections of .txt documents to compare with a target document also in .txt format. Both the similarity metric and topic modeling use a combination of Python's [NLTK](https://www.nltk.org/) and [GenSim](https://radimrehurek.com/gensim/) packages, and the visualization software used is [pyLDAvis](https://github.com/bmabey/pyLDAvis). A completed final report (what is created upon the succesful completion of the script) is visible [here](https://htmlpreview.github.io/?https://github.com/bleonardi/text_similarity_and_modeling/blob/master/report.html).
 ## Algorithms
