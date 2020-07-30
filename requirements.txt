@@ -1,0 +1,9 @@
+htrc-feature-reader
+numpy
+pandas
+matplotlib
+nltk
+spacy
+CyHunspell
+gensim
+pyLDAvis
