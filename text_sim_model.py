@@ -68,9 +68,10 @@ def prepare_text_for_modelling(vol, is_HTRC):
     tokens = [token for token in tokens if len(token) > 4]
     #### Removes annoying characters from tokens
     tokens = [re.sub("ſ","s",token) for token in tokens]
-    tokens = [re.sub("\d","",token) for token in tokens]
-    tokens = [re.sub("-","",token) for token in tokens]
-    tokens = [re.sub(" ","",token) for token in tokens]
+    tokens = [re.sub('[\W_]+', "",token) for token in tokens]
+    tokens = [token.encode('latin-1', 'ignore') for token in tokens]
+    tokens = [token.decode('latin-1') for token in tokens]
+    tokens = [re.sub(" ","", token) for token in tokens]
     #### Filters stop words
     tokens = [token for token in tokens if token not in en_stop]
     #### Ensures tokens are english words, removes empty tokens
@@ -82,12 +83,17 @@ def prepare_text_for_modelling(vol, is_HTRC):
             is_word = h.spell(token)
             ###### Gets root of valid token
             if is_word:
-                token = h.stem[-1]
+                if len(h.stem(token)) > 0:
+                    token = h.stem(token)[-1]
                 break
             ###### Gets suggestions for invalid token, finds root word based on most likely suggestion
             sug = h.suggest(token)
             if len(sug) > 0:
-                token = h.stem(sug[0])[-1]
+                tok_stem = h.stem(sug[0])
+                if len(tok_stem) > 0:
+                    token = h.stem(sug[0])[-1]
+                else:
+                    token = ""
             else:
                 token = ""
         else:
@@ -199,7 +205,6 @@ for num_topics in n_t_array:
     ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics = num_topics, id2word = dictionary, passes = 15)
     ldamodel.save('model.gensim')
     topics = ldamodel.print_topics(num_words = 5)
-    print("Topic model with " str(num_topics) + "completed.")
     models[num_topics] = ldamodel
 
 # Visualization with pyLDAvis
@@ -240,11 +245,13 @@ for num_topics in n_t_array:
     ### Adds list to their respective dict
     sim_disp_dict[num_topics] = sim_list
     word_disp_dict[num_topics] = word_list
+    print("Added similarity metrics and words for topic model with " + str(num_topics) + " topics.")
     lda = models[num_topics]
     lda_display = pyLDAvis.gensim.prepare(lda, corpus, dictionary, sort_topics=False)
     ### Adds raw html to lda vis dict
     lda_vis_html[num_topics] = pyLDAvis.prepared_data_to_html(lda_display).\
     replace('<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">',"")
+    print("Added similarity visualization for topic model with "+ str(num_topics) + " topics.")
 
 print("Writing report...")
 # HTML report
